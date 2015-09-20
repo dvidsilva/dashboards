@@ -1,0 +1,22 @@
+{
+  "name": "dashboards",
+  "version": "0.0.0",
+  "authors": [
+    "dvid <contacto@dvidsilva.com>"
+  ],
+  "description": "dashboards to see data in real time at the office",
+  "main": "index.html",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-material-design": "~0.3.0",
+    "bootstrap": "~3.3.5",
+    "angular": "~1.4.6"
+  }
+}
