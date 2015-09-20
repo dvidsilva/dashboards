@@ -1,0 +1,45 @@
+div.dashboard-map {
+  width: 1080px;
+  height: 540px;
+  background: blue;
+  padding: 0;
+  position: relative;
+}
+div.dashboard-map .long {
+  width: 3px;
+  height: 3px;
+  box-width: border-box;
+  float: left;
+}
+div.dashboard-map .long:nth-child(10n+10) {
+  border-left: 1px solid black;
+}
+div.dashboard-map .lat {
+  height: 3px;
+}
+div.dashboard-map .lat:nth-child(10n+10) {
+  border-bottom: 1px solid black;
+}
+
+div.dashboard-map .point {
+  position: absolute;
+  border-radius: 50%;
+  height: 20px;
+  width: 20px;
+  background: transparent;
+}
+
+
+div.dashboard-map .point.animated {
+  border: 3px solid #999;
+  -webkit-border-radius: 30px;
+  -webkit-animation: pulsate 1s ease-out;
+  -webkit-animation-iteration-count: infinite; 
+  opacity: 0.0
+}
+@-webkit-keyframes pulsate {
+  0% {-webkit-transform: scale(0.1, 0.1); opacity: 0.0;}
+  50% {opacity: 1.0;}
+  100% {-webkit-transform: scale(1.2, 1.2); opacity: 0.0;}
+}
+
