@@ -4,6 +4,10 @@ div.dashboard-map {
   background: blue;
   padding: 0;
   position: relative;
+  background-image: url('../img/mapbg.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
 }
 div.dashboard-map .long {
   width: 3px;
@@ -12,13 +16,19 @@ div.dashboard-map .long {
   float: left;
 }
 div.dashboard-map .long:nth-child(10n+10) {
-  border-left: 1px solid black;
+  /* border-right: 1px solid black; */
+}
+div.dashboard-map .long:nth-child(180) {
+  border-right: 1px solid white;
 }
 div.dashboard-map .lat {
   height: 3px;
 }
 div.dashboard-map .lat:nth-child(10n+10) {
-  border-bottom: 1px solid black;
+  /* border-bottom: 1px solid black; */
+}
+div.dashboard-map .lat:nth-child(90) {
+  border-bottom: 1px solid white;
 }
 
 div.dashboard-map .point {
@@ -29,6 +39,9 @@ div.dashboard-map .point {
   background: transparent;
 }
 
+div.dashboard-map .point span{
+  display: none;
+}
 
 div.dashboard-map .point.animated {
   border: 3px solid #999;
