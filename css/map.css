@@ -1,13 +1,15 @@
 div.dashboard-map {
   width: 1080px;
   height: 540px;
-  background: blue;
+  background: white;
   padding: 0;
   position: relative;
   background-image: url('../img/mapbg.png');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   background-position: center;
+  border: 1px solid black;
+  margin: 1em;
 }
 div.dashboard-map .long {
   width: 3px;
