@@ -68,3 +68,4 @@ angular.module('dod.dashboard.map', []).directive('map', function ($log) {
  longitude: vertical : 360 lines
  latitude: horizontal : 180 lines
  */
+
