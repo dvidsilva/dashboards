@@ -7,14 +7,23 @@ angular.module('dod.dashboard.map', []).directive('map', function ($log) {
   };
   var template = [
     "<div class=\"dashboard-map\">",
-    " <div ng-repeat='point in map.points' class='point animated' ng-class='point.type' ng-style=\"{'left': map.longLocation(point.long), 'top': map.latLocation(point.lat)}\">",
-    "<span>{{point.label}}</span>",
+    "  <div ng-repeat='point in map.points' class='point animated' ng-class='point.type' ng-style=\"{'left': map.longLocation(point.long), 'top': map.latLocation(point.lat)}\">",
+    "    <span>{{point.label}}</span>",
+    "  </div>",
     "</div>",
+    "<h2>debugger <small>Add points to the map</small></h2>",
+    "<div ng-repeat='point in map.points' style='padding: 4px; border-bottom: 1px solid lightgray;'>",
+    "  <input ng-model='point.lat' placeholder='lat'> ",
+    "  <input ng-model='point.long' placeholder='long'> ",
+    "  <input ng-model='point.label' placeholder='label'> ",
+    "  <input ng-model='point.type' placeholder='type(md, psych, lc)'> ",
+    "  <button ng-click='map.removePoint($index)' class='btn btn-danger btn-sm' >Remove</button>",
+    "</div>",
+    "<div ><button ng-click='map.points.push({})' class='btn btn-primary' >Add</button></div>",
     "</div>"
   ];
   return {
     template: template.join(""),
-    replace: true,
     link: function (scope, elem) {
       var grid = [];
       $log.info(elem);
@@ -36,14 +45,18 @@ angular.module('dod.dashboard.map', []).directive('map', function ($log) {
       };
       map.latLocation = function (point) {
         point = 90 - point;
-        $log.info(point);
+        // $log.info(point);
         return (point * Constants.latMultiplier) + "px";
+      };
+      map.removePoint = function ($index) {
+        map.points.splice($index,1);
       };
       map.points = [
         {lat: 37.7833, long: -122.4167, type: 'md', label: 'SF'},
-        {lat: 40.7127, long: -74.0059, type: 'md', label: 'New York'},
+        {lat: 40.7833, long: -122.4167, type: 'lc', label: ''},
+        {lat: 40.7127, long: -74.0059, type: 'psych', label: 'New York'},
         {lat: 35.6833, long: 139.6833, type: 'md', label: 'Tokio'},
-        {lat: 4.5981, long: -74.0758, type: 'md', label: 'Bogota'},
+        {lat: 4.5981, long: -74.0758, type: 'psych', label: 'Bogota'},
         {lat: 0.2333, long: -78.5167, type: 'md', label: 'Quito'},
       ];
       return map;

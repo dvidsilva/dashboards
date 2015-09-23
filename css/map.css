@@ -49,9 +49,16 @@ div.dashboard-map .point.animated {
   border: 3px solid #999;
   -webkit-border-radius: 30px;
   -webkit-animation: pulsate 1s ease-out;
-  -webkit-animation-iteration-count: infinite; 
+  -webkit-animation-iteration-count: infinite;
   opacity: 0.0
 }
+div.dashboard-map .point.animated.md {
+  border-color: #FC4C75;
+}
+div.dashboard-map .point.animated.psych {
+  border-color: #27D2DF;
+}
+
 @-webkit-keyframes pulsate {
   0% {-webkit-transform: scale(0.1, 0.1); opacity: 0.0;}
   50% {opacity: 1.0;}
